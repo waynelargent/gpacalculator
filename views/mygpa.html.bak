@@ -1,4 +1,4 @@
-{{extend 'layout2.html'}}
+{{extend 'mylayout.html'}}
 {{#=BEAUTIFY(response._vars)}}
 <h3>
     Hello {{=full_name.first_name}}
