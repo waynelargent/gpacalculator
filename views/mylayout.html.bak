@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPA Calculator</title>
+        <style>
+            header { background-color: darkblue;
+                     background-image: url("/gpacalculator/static/images/reportcard.png");
+                     background-position:left;
+                     background-repeat: no-repeat;
+                    line-height: 300%;
+                    font-size: 2em;
+                    color: white;
+                    text-align:center;
+                    font-size: 3em;
+            }
+            nav { background-color: lightblue;
+                   font-weight: bold;
+                   text-align: center;
+                   line-height: 200%;
+                   margin-bottom: 0;
+                   font-size: 1.5em;
+            }
+            nav a { text-decoration: none; 
+            }
+            main { background-color: white;
+                   margin-top: 0;
+                   padding-left: 30px;
+            }
+            footer { text-align: center; 
+                     font-size: .7em;
+                     background-color: white;  
+            }
+            #wrapper { width: 80%;
+                       margin-right: auto;
+                       margin-left: auto;
+                       background-color: white;
+                       height: 100%;
+            }
+            body { background-image: linear-gradient(to bottom, #FFFFFF, #AAAAAA);
+                   background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                GPA Calculator
+            </header>
+            <nav>
+                <a href="/gpacalculator/default/index">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gpacalculator/default/mygpa">MyGPA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gpacalculator/default/classes">Classes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/gpacalculator/default/grades">Grades</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">About Us</a>
+            </nav>
+            <main>
+                <!-- Begin page content -->
+                <div class="container-fluid main-container">
+                  {{include}}
+                  {{=response.toolbar() if response.show_toolbar else ''}}
+                </div>
+            </main>
+            <footer>
+                &copy; 2023 mygpa.com
+            </footer>
+        </div>
+    </body>
+</html>

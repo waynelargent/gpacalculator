@@ -1,0 +1,24 @@
+{{extend 'layout2.html'}}
+{{#=BEAUTIFY(response._vars)}}
+<h3>
+    Hello {{=full_name.first_name}}
+</h3>
+<table>
+   
+
+{{  grandtotal = 0
+    credittotal = 0
+    for row in rows:
+        credits = row['credits']
+        points = row['points']
+        total = credits * points
+        credittotal += credits
+        grandtotal += total   }}
+         Class: {{=row['classname']}} Grade: {{=row['letter']}} Credits: {{=row['credits']}}<br />
+         {{pass}}
+    {{ gpa = grandtotal / credittotal }}
+    <h2>
+        GPA: {{=round(gpa,2)}}
+    </h2>
+   
+</table>
